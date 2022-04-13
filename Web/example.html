@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="김종찬">
+	<meta name ="description" content="문서 내용 설명">
+	<meat http-equiv="keywords" content="검색 키워드 설정">
+
+	<!-- css 외부 선언
+	<link href=".css 파일" type="text/css" ref="stylesheet">
+	-->
+
+	<!-- 기본 폴더 경로 설정, 미 사용 시 현재 문서가 저장된 폴더가 기본 폴더가 됨(ex: ".\Image\")
+	<base src="C:\Users\spiez\OneDrive\Desktop\Web">
+	-->
+
+	<style>
+		h1 {background: orange; }
+		h1:hover {background: black; color: white; }
+		h1:active {background: white; color: black; }
+
+		#h2::first-letter {color: red; font-size: 50px; font-weight: bold; }
+		#h2::first-line {background: gray; }
+		
+		h3 {background: skyblue; color: red; text-align: center; }
+		
+		#li1 {background: yellow; }
+		.cli1 {color: violet; }
+
+		#li2:nth-child(2) {background: gold; }
+		#li2:nth-last-child(1) {background: lightgreen; }
+
+		#li3:first-child {color: orange; }
+		#li3:last-child {color: gold; }
+
+		#li5 {font-size: large; font-style: italic; font-weight: bold; }
+
+		ul.c {list-style-image: url("./Image/star.jpg"); list-style-position: outside; }
+		ul.nemo {list-style-position: inside; }
+
+		h4::before {content: url("./Image/facebook.png");}
+		h4::after {content: "(내용 추가)"; font-size: small; color: skyblue; }
+
+		input[type="text"] {background: gold; color: blue; }
+		input[required] {background: gray; color: white; }
+		input[disabled] {background: black; color: white; }
+
+		h3.uppercase {text-align: center; text-decoration: overline; text-transform: uppercase; }
+		h3.lowercase {text-align: left; text-decoration: line-through; text-transform: lowercase; }
+		h3.capitalize {text-align: right; text-decoration: underline; text-transform: capitalize; }
+
+		.article {column-count: 4; column-gap: 50px; column-rule: 2px solid red; }
+		h2 {column-span: all; }
+
+		table {table-layout: auto; width: 40%; border-collapse: separate; border-spacing: 5px 10px; border: 2px solid blue; }
+		th {background: gray; }
+		td {text-align: center; border: 1px dotted red; }
+
+		body {background-color: lavender; background-image: url("./Image/ring.jpg"); background-position: left top; background-repeat: repeat-x; }
+	</style>
+	
+	<!-- 외부 자바스크립트 연결 src=".js" -->
+	<script>
+		var subject1="Web Programming!";
+		function welcome(target) {
+			document.write("Welcome to " + target);
+		}
+	</script>
+	
+	<title> 연습 </title>
+</head>
+<body>
+	공백 &nbsp; 문자 <hr>
+	
+	<h3 class="uppercase">uppercase</h3>
+	<h3 class="lowercase">LOWERcase</h3>
+	<h3 class="capitalize">capitalize</h3>
+
+	<h1>제목1</h1> <h2 id="h2">제목2</h2> <h3>제목3</h3> <h4>제목4</h4> <h5>제목5</h5> <h6 style="color: blue;">제목6</h6> <hr>
+	<strong>강조할 때</strong> <b>진하게</b> <i>이탤릭체(기울이기)</i> <sub>아래 첨자</sub> <sup>위 첨자</sup> <hr>
+	
+	<pre>
+	입력 형식
+	그대로
+	표시
+	</pre>
+	
+	<p>입력 형식
+	다르게
+	표시</p>
+	<hr>
+
+	순서 있는 리스트
+	<ol>
+		<li id="li1">apple</li>
+		<li>banana</li>
+		<li>carrot</li>
+	</ol>
+	<ol type="A">
+		<li id="li2">apple</li>
+		<li id="li2">banana</li>
+		<li id="li2">carrot</li>
+	</ol>
+	<ol type="A" start="10">
+		<li id="li3">apple</li>
+		<li id="li3">banana</li>
+		<li id="li3">carrot</li>
+	</ol>
+
+	순서 없는 리스트
+	<ul>
+		<li class="cli1">apple</li>
+		<li>banana</li>
+		<li>carrot</li>
+	</ul>
+	<ul type="circle">
+		<li id="li5">apple</li>
+		<li>banana</li>
+		<li>carrot</li>
+	</ul>
+	<ul type="square" class="nemo">
+		<li>apple</li>
+		<li>banana</li>
+		<li>carrot</li>
+	</ul>
+	<ul class="c">
+		<li>apple</li>
+		<li>banana</li>
+		<li>carrot</li>
+	</ul>
+	<hr>
+
+	<table border="1">
+		<caption>표 제목</caption>
+		<thead>
+			<tr> <th>제목1</th> <th>제목2</th> <th>제목3</th> </tr>
+		</thead>
+		<tbody>
+			<tr> <td rowspan=2>열 합치기</td> <td>내용1-2</td> <td>내용1-3</td> </tr>
+			<tr> <td>내용2-2</td> <td>내용2-3</td> </tr>
+			<tr> <td>내용3-1</td> <td colspan=2>행 합치기</td> </tr>
+		</tbody>
+		<tfoot>
+			<tr> <td>푸터1</td> <td>푸터2</td> <td>푸터3</td> </tr>
+		</tfoot>
+	</table> <hr>
+
+	<img src="./Image/image1.jpg" width=120 height=190 alt="맨체스터시티 라이언" /> <br> <hr>
+
+	<audio src=" .mp3" autoplay controls volume=0.5></audio>
+	<video src=" .mp4" controls poster="./Image/image1.jpg" witdh="150" height="240" volume=0.5></video> <hr>
+
+	<a href="https://www.naver.com/">
+		NAVER<img src="./Image/naver.png" width=80 height=80 />
+	</a> <br>
+	<a href="https://www.instagram.com/" target="_blank">
+		INSTAGRAM(새 창 열기)<img src="./Image/Instagram_icon.png" width=80 height=80 />
+	</a> <hr> <br>
+
+	<a href="./Image/naver.png" target="frame1">네이버 아이콘</a> &nbsp; <a href="./Image/kakaotalk.png" target="frame1">카카오톡 아이콘</a> <br><br>
+	<iframe src="./Image/naver.png" name="frame1" width="300" height="300"></iframe> <hr>
+
+	<pre><form method="get" action="processingGet.php">
+			학과 : <input type="text" name="major" value="컴퓨터공학과" />
+			이름 : <input type="text" name="name" value="" />
+			<br>
+			<input type="submit" value="입력 결과 조회" /> <input type="reset" value="입력 취소" /> <br> <hr>
+			비밀번호 : <input type="password" name="passwd" size=15 />
+			<br>
+			<input type="submit" value="로그인" /> <input type="reset" value="입력 취소" /> <br> <hr> </form></pre>
+
+	<form> <fieldset>
+		<legend> 성별 </legend>
+		<input type="radio" name="gender" value="male" checked id="g1"/> <label for="g1">남성</label>
+		<input type="radio" name="gender" value="female" /> 여성 </fieldset> <br>
+		
+		<fieldset> <legend> 스포츠 </legend>
+		<input type="checkbox" name="sport" value="baseball" /> 야구
+		<input type="checkbox" name="sport" value="football" checked /> 축구 </fieldset> <br>
+
+		첨부파일 : <input type="file" name="filename" />
+	</form>
+	<hr>
+
+	<a href="https://www.naver.com/" target="_blank">
+		<button type="button">Go To NAVER(button 타입)</button>
+	</a><br>
+	<a href="https://www.naver.com/" target="_blank">
+		<input type="button" value="Go To NAVER(input 타입)" /></button>
+	</a><br>
+	<button type="button" onclick="alert('버튼을 클릭했습니다!');"> Click me</button><br>
+	<a href="javascript: alert(Welcome to javascript!);">자바스크립트</a><br>
+	<button onclick="welcome(subject1);">웹 프로그래밍</button>
+	<hr>
+
+	<textarea rows="3" cols="50" name="memo">
+		
+		자유롭게 작성하세요.
+	</textarea><hr>
+
+	국적 : <select name="country">
+		<option value="France">프랑스</option>
+		<option value="Korea" selected>대한민국</option>
+	</select>
+	도시 : <select name="city" size="5" multiple>
+		<option value="서울" selected>서울</option>
+		<option value="파리">파리</option>
+		<option value="런던">런던</option>
+	</select> <hr> <br>
+
+	이메일 : <input type="email" placeholder="xxx@xx.xx.xx.xx" name="mail" /> <br>
+	웹 주소 : <input type="url" placeholder="http://xxx.xxx.xxx.xxxx" name="address" /> <br>
+	검색어 입력 : <input type="search" name="keyword" /> <br>
+	날짜 & 시간 : <input type="date" name="mday" /> <input type="time" name="mtime" /> <br>
+	숫자 : <input type="number" min="0" max="100" step="1" value="24" /> <br>
+	범위 : <input type="range" min="0" max="100" step="5" value="50" /> <br>
+	색상 : <input type="color" /> <br>
+	리스트 : <input type="text" list="major" />
+	<datalist id="major">
+		<option value="컴퓨터공학과">
+		<option value="건축공학과">
+		<option value="정보통신학과">
+	</datalist> <br><hr>
+	필수 : <input type="text" required /> <br>
+	입력 불가 : <input type="text" disabled /> <hr>
+
+	<div class="article">
+		<h2> 아이유(IU) - 마음을 드려요 </h2>
+		당신에게 드릴 게 없어서
+		나의 마음을 드려요
+		그대에게 받은 게 많아서
+		표현을 다 할 수가 없어요
+
+		나지막한 인사에
+		수많은 내 마음 고이 담아
+		그대에게로 건네면
+		내 마음 조금 알까요
+
+		어떤 이유로 만나
+		나와 사랑을 하고
+		어떤 이유로 내게 와
+		함께 있어준 당신
+
+		부디 행복한 날도
+		살다 지치는 날도
+		모두 그대의 곁에 내가
+		있어줄 수 있길
+
+		어떤 소식 보다 더
+		애타게 기다려지는 그대
+		엇갈리지 않게 여기
+		기다릴게요
+
+		눌러 적은 편지에
+		수많은 그리움 고이 담아
+		그대 내게로 올 때면
+		그 손에 쥐어줄게요
+
+		어떤 이유로 만나
+		나와 사랑을 하고
+		어떤 이유로 내게 와
+		함께 있어준 당신
+
+		부디 행복한 날도
+		살다 지치는 날도
+		모두 그대의 곁에 내가
+		있어줄 수 있길
+
+		네 번의 모든 계절들과
+		열두 달의 시간을 너와
+		숨이 차게 매일
+		사랑하며 함께 할게
+
+		어떤 이유로 만나
+		우리 사랑을 했던
+		지금 이 순간처럼
+		매일 바라보며
+		애써주기를
+
+		부디 행복한 날도
+		살다 지치는 날도
+		모두 그대의 곁에 내가
+		있어줄 수 있길
+
+		부디 
+		추억만 남지 않길 너완
+</body>
+</html>
